@@ -20,11 +20,12 @@ public class BottleListener implements Listener {
 		ItemStack item = e.getPlayer().getInventory().getItemInMainHand();
 		
 		if (item.getType() == Material.EXPERIENCE_BOTTLE) {
-			e.setCancelled(true);
 			
 			PersistentDataContainer pdc = item.getItemMeta().getPersistentDataContainer();
 			
 			if (pdc.has(new NamespacedKey(JavaPlugin.getPlugin(Main.class), "cstm_exp_lvl"))) {
+				e.setCancelled(true);
+				
 				e.getPlayer().sendMessage("Splashed Custom XP Bottle!");
 				
 				e.getPlayer().getInventory().remove(item);
