@@ -7,10 +7,19 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.fattied.fl0jah.command.BottleCreateExecutor;
+import com.fattied.fl0jah.events.BottleListener;
+
 public class Main extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		
+		// Register custom event listener for bottle thrown
+		Bukkit.getServer().getPluginManager().registerEvents(new BottleListener(), this);
+		
+		// Register custom command
+		this.getCommand("bottle").setExecutor(new BottleCreateExecutor());
 		
 		// Create recipe for experience bottle
 		ShapedRecipe recipe = new ShapedRecipe(

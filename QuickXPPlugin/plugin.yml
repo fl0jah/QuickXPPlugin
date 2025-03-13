@@ -1,4 +1,10 @@
 name: QuickXP
 version: 1.0
+api-version: '1.21.4'
 main: com.fattied.fl0jah.main.Main
 description: Plugin that simplifies adding XP to player experience
+commands:
+ bottle:
+  description: Convert player level experience to enchantment bottle
+  usage: /<command>
+  permission: quickxp.bottle.create
