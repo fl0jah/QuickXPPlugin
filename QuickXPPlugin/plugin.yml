@@ -1,0 +1,4 @@
+name: QuickXP
+version: 1.0
+main: com.fattied.fl0jah.main.Main
+description: Plugin that simplifies adding XP to player experience
