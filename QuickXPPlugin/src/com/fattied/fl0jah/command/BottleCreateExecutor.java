@@ -5,6 +5,7 @@ import java.util.Arrays;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.block.Block;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -58,7 +59,7 @@ public class BottleCreateExecutor implements CommandExecutor{
 						
 						player.getInventory().addItem(exp);
 						
-						player.sendMessage(ChatColor.DARK_GREEN + "Bottle Created!");
+						player.sendMessage(ChatColor.DARK_GREEN + "XP Bottle Created!");
 					}
 				}
 			}else {

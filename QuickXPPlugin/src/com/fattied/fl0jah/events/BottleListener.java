@@ -1,5 +1,6 @@
 package com.fattied.fl0jah.events;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
@@ -25,14 +26,15 @@ public class BottleListener implements Listener {
 			
 			if (pdc.has(new NamespacedKey(JavaPlugin.getPlugin(Main.class), "cstm_exp_lvl"))) {
 				e.setCancelled(true);
-				
-				e.getPlayer().sendMessage("Splashed Custom XP Bottle!");
-				
-				e.getPlayer().getInventory().remove(item);
+								
+				//e.getPlayer().getInventory().remove(item);
+				item.setAmount(item.getAmount() - 1);
 				
 				int redeem = pdc.get(new NamespacedKey(JavaPlugin.getPlugin(Main.class), "cstm_exp_lvl"), PersistentDataType.INTEGER);
 				
 				BottleCreateExecutor.changePlayerExp(e.getPlayer(), BottleCreateExecutor.getPlayerExp(e.getPlayer()) + redeem);
+				
+				e.getPlayer().sendMessage(ChatColor.GREEN + "Experience Bottle Redeemed!");
 				
 			}else { return; }
 		}else { return; }
